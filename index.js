@@ -23,6 +23,7 @@ fs.readdir("./src/events/", (err, files) => {
         client.events.set(eventName, eventStart)
         if(eventName !== 'message' && client.botStatus === 'off') return;
         client.on(eventName, (...args) => eventFunction.run(client, utils, ...args));
+        console.log(`L'evenement ${eventName} a ete charger.`)
     })
 });
 
